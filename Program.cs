@@ -1,7 +1,13 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using asp_net_auth.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<asp_net_authContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("asp_net_authContext")));
 
 var app = builder.Build();
 
