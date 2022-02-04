@@ -7,24 +7,26 @@
 <div class="text-center">
     <h1 class="display-4">RPC :: Competitive Competition Network</h1>
     <div class="container shadow-lg p-3 mb-5 rounded">
-        <form>
+        <form method="post">
             <div class="row mb-4" >
                 <div class="col-md-6 offset-md-3">
-                    <input class = "form-control text-center" placeholder = "Username"/>
+                    <input asp-for="User.Username" class = "form-control text-center" placeholder = "Username"/>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col-md-6 offset-md-3">
-                    <input type = "password" class = "form-control text-center" placeholder = "Password" />
+                    <input asp-for="User.Password" type = "password" class = "form-control text-center" placeholder = "Password" />
                 </div>
             </div>
               <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <button class = "btn btn-danger text-center w-25">Iniciar sesion</button>
+                    <input class = "btn btn-danger text-center w-25" type = "submit" value = "Iniciar sesion"/>
                 </div>
             </div>
         </form>
-        
-
     </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
