@@ -66,6 +66,7 @@ namespace asp_net_auth.Pages.Users
                     throw;
                 }
             }
+            
 
             return RedirectToPage("./Index");
         }

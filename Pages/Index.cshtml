@@ -8,19 +8,22 @@
     <h1 class="display-4">RPC :: Competitive Competition Network</h1>
     <div class="container shadow-lg p-3 mb-5 rounded">
         <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row mb-4" >
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3 form-group">
                     <input asp-for="User.Username" class = "form-control text-center" placeholder = "Username"/>
+                    <span asp-validation-for="User.Username" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3 form-group">
                     <input asp-for="User.Password" type = "password" class = "form-control text-center" placeholder = "Password" />
                 </div>
             </div>
               <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3 form-group">
                     <input class = "btn btn-danger text-center w-25" type = "submit" value = "Iniciar sesion"/>
+                    <span asp-validation-for="User.Password" class="text-danger"></span>
                 </div>
             </div>
         </form>
