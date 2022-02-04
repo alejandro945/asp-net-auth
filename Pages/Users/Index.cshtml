@@ -50,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.Birth)
             </td>
             <td>
-                <button asp-page="./Edit" asp-route-id="@item.ID">Edit</button>|
-                <button asp-page="./Details" asp-route-id="@item.ID">Details</button> |
-                <button asp-page="./Delete" asp-route-id="@item.ID">Delete</button>
+                <a asp-page="./Edit" asp-route-id="@item.ID"><button class = "btn btn-primary">Editar</button></a>|
+                <a asp-page="./Details" asp-route-id="@item.ID"><button class = "btn btn-success">Detalles</button></a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID"><button class = "btn btn-danger">Borrar</button></a>
             </td>
         </tr>
 }
