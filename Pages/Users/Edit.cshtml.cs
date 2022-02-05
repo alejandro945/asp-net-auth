@@ -22,7 +22,7 @@ namespace asp_net_auth.Pages.Users
         }
 
         [BindProperty]
-        public User User { get; set; }
+        public new User User { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -40,8 +40,6 @@ namespace asp_net_auth.Pages.Users
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -68,7 +66,7 @@ namespace asp_net_auth.Pages.Users
             }
             
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
         }
 
         private bool UserExists(int id)

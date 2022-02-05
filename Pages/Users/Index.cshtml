@@ -8,7 +8,10 @@
 <h1>User Table</h1>
 
 <div >
-  <a asp-page="Create"><input type="button" class="btn btn-danger" id="liveToastBtn" value="New User" /></a>
+  <div class="btn-group" role="group" aria-label="Basic example">
+  <a asp-page="Create"><input type="button" class="btn btn-danger" value="New User" /></a>
+  <a asp-page="../Index"><input type="button" class="btn btn-warning" value="Salir" /></a>
+</div>
 </div>
 <table class="table">
     <thead>
@@ -50,25 +53,11 @@
                 @Html.DisplayFor(modelItem => item.Birth)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID"><button class = "btn btn-primary">Editar</button></a>|
-                <a asp-page="./Details" asp-route-id="@item.ID"><button class = "btn btn-success">Detalles</button></a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID"><button class = "btn btn-danger">Borrar</button></a>
+                <a asp-page="./Edit" asp-route-id="@item.ID"><input type="button" value="Editar" class = "btn btn-primary"/></a>|
+                <a asp-page="./Details" asp-route-id="@item.ID"><input type="button" value="Detalles"  class = "btn btn-success"></a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID"><input type="button" value="Editar"  class = "btn btn-danger"/></a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-      <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="...">
-          <strong class="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          Hello, world! This is a toast message.
-        </div>
-      </div>
-    </div>

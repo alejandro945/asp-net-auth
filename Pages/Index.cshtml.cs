@@ -8,38 +8,45 @@ namespace asp_net_auth.Pages
     public class IndexModel : PageModel
     {
 
-#pragma warning restore CS8618
-#pragma warning restore CS8602
-
         private readonly asp_net_auth.Data.asp_net_authContext _context;
 
-        [BindProperty]
-        public new User User { get; set; }
-
-        public IndexModel(Data.asp_net_authContext context)
+                                                                                                                      #pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
+        public IndexModel(asp_net_auth.Data.asp_net_authContext context)
+                                                                                                                      #pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         {
             _context = context;
         }
+        [BindProperty]
+        public new User User { get; set; }
+
         public IActionResult OnGet()
         {
             return Page();
         }
 
-            public void OnPostAsync()
+        public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+
+            var u = _context.User.FirstOrDefault(m => m.Username.Equals(User.Username) && m.Password.Equals(User.Password));
+            if (u == null)
             {
-                Page();
+                return NotFound();
+            }
+            else
+            {
+                return RedirectToPage("./Users/Index");
             }
 
-            RedirectToPage("./Users");
+            if (!ModelState.IsValid)    
+            {
+                return Page();
+            }
+
+           
         }
 
-        private bool UserExists(string username, string password)
-        {
 
-            return _context.User.Any(e => e.Username.Equals(username) && e.Password.Equals(password));
-        
-        }
+     
+
     }
 }

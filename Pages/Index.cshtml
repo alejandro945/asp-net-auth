@@ -11,21 +11,26 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row mb-4" >
                 <div class="col-md-6 offset-md-3 form-group">
-                    <input asp-for="User.Username" class = "form-control text-center" placeholder = "Username"/>
+                    <input asp-for="User.Username" class="form-control text-center"  placeholder="Usuario" />
                     <span asp-validation-for="User.Username" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col-md-6 offset-md-3 form-group">
-                    <input asp-for="User.Password" type = "password" class = "form-control text-center" placeholder = "Password" />
-                </div>
-            </div>
-              <div class="row">
-                <div class="col-md-6 offset-md-3 form-group">
-                    <input class = "btn btn-danger text-center w-25" type = "submit" value = "Iniciar sesion"/>
+                    <input asp-for="User.Password" type="password" class="form-control text-center" placeholder="Contraseña" />
                     <span asp-validation-for="User.Password" class="text-danger"></span>
                 </div>
             </div>
+              <div class="row mb-4">
+                <div class="col-6 offset-md-3 form-group">
+                    <input class = "btn btn-danger text-center w-50" type="submit" value = "Iniciar sesion"/>
+                </div>     
+            </div>
+                <div class="row mb-4">
+                    <div class="col-6 offset-md-3">
+                           <a asp-page="./Users/Create"><input type="button" class="btn btn-warning w-50" value="Registrame" /></a>
+                    </div>
+                </div>
         </form>
     </div>
 </div>
