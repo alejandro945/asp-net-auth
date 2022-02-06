@@ -7,42 +7,33 @@
 <div class="text-center">
     <h1 class="display-4">RPC :: Competitive Competition Network</h1>
     <div class="container shadow-lg p-3 mb-5 rounded">
-         <div class="card mb-3 offset-md-4" style="max-width: 540px;">
-          <div class="row">
+          <div class="row mb-3">
             <div class="col-md-4 offset-md-4">
-              <img src=".../Static/welcome.png" class="img-fluid rounded-start" alt="...">
+              <img src="./static/login.svg" class="img-fluid rounded-start" alt="...">
             </div>
-            <div class="col-md-8 offset-md-2">
-              <div class="card-body">
-                <h5 class="card-title">RPC Login</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
+           </div>
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row mb-4" >
                 <div class="col-md-6 offset-md-3 form-group">
-                    <input asp-for="User.Username" class="form-control text-center"  placeholder="Usuario" />
+                    <input asp-for="User.Username" class="form-control text-center"  placeholder="Username" />
                     <span asp-validation-for="User.Username" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col-md-6 offset-md-3 form-group">
-                    <input asp-for="User.Password" type="password" class="form-control text-center" placeholder="Contraseña" />
+                    <input asp-for="User.Password" type="password" class="form-control text-center" placeholder="Password" />
                     <span asp-validation-for="User.Password" class="text-danger"></span>
                 </div>
             </div>
               <div class="row mb-4">
-                <div class="col-6 offset-md-3 form-group">
-                    <input class = "btn btn-danger text-center w-50" type="submit" value = "Iniciar sesion"/>
+                <div class="col-md-6 offset-md-3 form-group">
+                    <input class = "btn btn-danger text-center w-50" type="submit" value = "Sign in"/>
                 </div>     
             </div>
                 <div class="row mb-4">
-                    <div class="col-6 offset-md-3">
-                           <a asp-page="./Users/Create"><input type="button" class="btn btn-warning w-50" value="Registrame" /></a>
+                    <div class="col-md-6 offset-md-3">
+                           <a asp-page="./Users/Create"><input type="button" class="btn btn-warning w-50" value="Sign up" /></a>
                     </div>
                 </div>
         </form>

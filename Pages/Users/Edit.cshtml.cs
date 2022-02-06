@@ -66,7 +66,7 @@ namespace asp_net_auth.Pages.Users
             }
             
 
-            return RedirectToPage("../Index");
+            return RedirectToPage("./Index");
         }
 
         private bool UserExists(int id)

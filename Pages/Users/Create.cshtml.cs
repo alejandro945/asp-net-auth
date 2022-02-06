@@ -27,6 +27,7 @@ namespace asp_net_auth.Pages.Users
 
         [BindProperty]
         public new User User { get; set; }
+        public User u = RPC.session;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

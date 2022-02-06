@@ -19,6 +19,7 @@ namespace asp_net_auth.Pages
 
         public IActionResult OnGet()
         {
+            RPC.session = null;
             return Page();
         }
 

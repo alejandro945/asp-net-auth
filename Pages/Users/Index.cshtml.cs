@@ -25,12 +25,8 @@ namespace asp_net_auth.Pages.Users
 
         public async Task OnGetAsync()
         {
+            u = RPC.session;
             User = await _context.User.ToListAsync();
-        }
-
-        public void Logout()
-        {
-            RPC.session = null;
         }
     }
 }

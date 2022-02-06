@@ -5,27 +5,34 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>User Table</h1>
+
 <div class="card text-center">
   <div class="card-header">
       <h3>
-          @Html.DisplayFor(m => Model.u.Username);
+          @Html.DisplayFor(m => Model.u.Username)
       </h3>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Datos basicos del usuario.</h5>
-    <p class="card-text"> @Html.DisplayFor(m => Model.u.Name); </p>
-    <p class="card-text"> @Html.DisplayFor(m => Model.u.Birth); </p>
-     <div class="btn-group" role="group" aria-label="Basic example">
-      <a asp-page="Create"><input type="button" class="btn btn-danger" value="New User" /></a>
-      <a asp-page="../Index"><input type="button" class="btn btn-warning" value="Salir" /></a>
-    </div>
+  <div class="card-body mb-3">
+    <h5 class="card-title">User Basic Data</h5>
+    <p class="card-text"> Name: @Html.DisplayFor(m => Model.u.Name) </p>
+    <p class="card-text"> LastName:  @Html.DisplayFor(m => Model.u.LastName) </p>
+    <p class="card-text"> Birth: @Html.DisplayFor(m => Model.u.Birth) </p>
+     <div class="row mb-2">
+         <div class="col-md-6 offset-md-3">
+             <a asp-page="Create"><input type="button" class="btn btn-danger w-50" value="New User" /></a>
+         </div>
+      </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <a asp-page="../Index"><input type="button" class="btn btn-warning w-50" value="Log out"/></a>
+          </div>    
+          </div>
   </div>
   <div class="card-footer text-muted">
     All rights reserved
   </div> 
 </div>
-
+<h1>User Table</h1>
 <table class="table">
     <thead>
         <tr>
@@ -66,9 +73,9 @@
                 @Html.DisplayFor(modelItem => item.Birth)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID"><input type="button" value="Editar" class = "btn btn-primary"/></a>|
-                <a asp-page="./Details" asp-route-id="@item.ID"><input type="button" value="Detalles"  class = "btn btn-success"></a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID"><input type="button" value="Editar"  class = "btn btn-danger"/></a>
+                <a asp-page="./Edit" asp-route-id="@item.ID"><input type="button" value="Edit" class = "btn btn-primary"/></a>|
+                <a asp-page="./Details" asp-route-id="@item.ID"><input type="button" value="Details"  class = "btn btn-success"></a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID"><input type="button" value="Delete"  class = "btn btn-danger"/></a>
             </td>
         </tr>
 }

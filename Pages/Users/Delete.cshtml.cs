@@ -54,7 +54,7 @@ namespace asp_net_auth.Pages.Users
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
         }
     }
 }
