@@ -37,12 +37,12 @@ namespace asp_net_auth.Pages
                 return RedirectToPage("./Users/Index");
             }
 
-            if (!ModelState.IsValid)    
+
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-           
         }
 
 
