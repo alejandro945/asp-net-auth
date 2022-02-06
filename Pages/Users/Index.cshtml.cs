@@ -21,10 +21,16 @@ namespace asp_net_auth.Pages.Users
         }
 
         public new IList<User> User { get;set; }
+        public User u = RPC.session;
 
         public async Task OnGetAsync()
         {
             User = await _context.User.ToListAsync();
+        }
+
+        public void Logout()
+        {
+            RPC.session = null;
         }
     }
 }

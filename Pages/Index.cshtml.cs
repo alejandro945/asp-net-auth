@@ -7,17 +7,15 @@ namespace asp_net_auth.Pages
 {
     public class IndexModel : PageModel
     {
-
         private readonly asp_net_auth.Data.asp_net_authContext _context;
-
+        [BindProperty]
+        public new User User { get; set; }
                                                                                                                       #pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         public IndexModel(asp_net_auth.Data.asp_net_authContext context)
                                                                                                                       #pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         {
             _context = context;
         }
-        [BindProperty]
-        public new User User { get; set; }
 
         public IActionResult OnGet()
         {
@@ -26,23 +24,16 @@ namespace asp_net_auth.Pages
 
         public IActionResult OnPost()
         {
-
             var u = _context.User.FirstOrDefault(m => m.Username.Equals(User.Username) && m.Password.Equals(User.Password));
             if (u == null)
             {
-                return NotFound();
+                return RedirectToPage("./Error");
             }
             else
             {
+                RPC.session = u;
                 return RedirectToPage("./Users/Index");
-            }
-
-            if (!ModelState.IsValid)    
-            {
-                return Page();
-            }
-
-           
+            }           
         }
 
 
