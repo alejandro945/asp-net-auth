@@ -6,13 +6,26 @@
 }
 
 <h1>User Table</h1>
+<div class="card text-center">
+  <div class="card-header">
+      <h3>
+          @Html.DisplayFor(m => Model.u.Username);
+      </h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Datos basicos del usuario.</h5>
+    <p class="card-text"> @Html.DisplayFor(m => Model.u.Name); </p>
+    <p class="card-text"> @Html.DisplayFor(m => Model.u.Birth); </p>
+     <div class="btn-group" role="group" aria-label="Basic example">
+      <a asp-page="Create"><input type="button" class="btn btn-danger" value="New User" /></a>
+      <a asp-page="../Index"><input type="button" class="btn btn-warning" value="Salir" /></a>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    All rights reserved
+  </div> 
+</div>
 
-<div >
-  <div class="btn-group" role="group" aria-label="Basic example">
-  <a asp-page="Create"><input type="button" class="btn btn-danger" value="New User" /></a>
-  <a asp-page="../Index"><input type="button" class="btn btn-warning" value="Salir" /></a>
-</div>
-</div>
 <table class="table">
     <thead>
         <tr>
