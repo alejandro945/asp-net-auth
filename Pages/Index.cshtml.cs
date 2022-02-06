@@ -34,11 +34,7 @@ namespace asp_net_auth.Pages
             {
                 RPC.session = u;
                 return RedirectToPage("./Users/Index");
-            }           
+            }
         }
-
-
-     
-
     }
 }
